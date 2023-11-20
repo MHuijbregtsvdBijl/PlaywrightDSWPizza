@@ -7,7 +7,7 @@ let countDraw = 0;
 let countWinnerX = 0;
 let countWinnerY = 0;
 
-test('has title', async ({ BoterKaasEnEierenPage }) => {
+test('speel duizend maal boter kaas en eieren', async ({ BoterKaasEnEierenPage }) => {
   for (let gamesToPlay: number = 0; gamesToPlay <= 1000; gamesToPlay++) {
     await BoterKaasEnEierenPage.gotoPage();
     const playerOne = new player('X');
