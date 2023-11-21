@@ -8,6 +8,7 @@ export default class boterKaasEnEierenPage {
     readonly toestemmingCheckbox: Locator;
     readonly berichtVeld: Locator;
     readonly indienKnop: Locator;
+    readonly resultFieldName: Locator;
 
 
     constructor(public page: Page) {
@@ -18,10 +19,7 @@ export default class boterKaasEnEierenPage {
         this.toestemmingCheckbox = this.page.locator('#consentCheckbox');
         this.berichtVeld = this.page.getByLabel('Jouw bericht');
         this.indienKnop = this.page.getByRole('button', { name: 'Indienen' });
+        this.resultFieldName = this.page.locator("//td[@id='naam0']");
     }
-
-    async fillInForm(data:JSON){
-        await this.naamVeld.fill();
-    }
-       
+      
 }
