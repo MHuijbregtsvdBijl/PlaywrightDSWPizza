@@ -22,45 +22,43 @@ test.beforeEach(async ({ page }) => {
 //vanaf hier code voor oplossing opdracht
 
 
-async function fillInData(lengte: string, gewicht: string) {
-  async ({ page }) => {
+async function fillInData(lengte: string, gewicht: string, {page}) {
     await page.locator("//input[@id='BMILengte']").fill(lengte);
     await page.locator("//input[@id='BMIGewicht']").fill(gewicht);
     await page.locator("//button[@id='berekenBMI']").click();
-  };
 }
 
-async function assertData(bmi: string, text: string) {
-  async ({ page }) => {
+async function assertData(bmi: string, text: string,{page}) {
+
     await expect(page.locator('//p[@id="jouwBMI"]')).toContainText(
       "Jouw BMI is: " + bmi
     );
     await expect(page.locator('//p[@id="statusBMI"]')).toContainText(
       "Jij bent: " + text
     );
-  };
 }
 
   test.beforeEach(async ({ page }) => {
     await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/bmi.html");
   });
+  
 
   test('te licht', async ({ page }) => {
-    await fillInData("176", "20");
-    await assertData("6.5", "te licht");
+    await fillInData("176", "20",{page});
+    await assertData("6.5", "te licht",{page});
   });
 
   test('gezond', async ({ page }) => {
-    await fillInData("186", "26");
-    await assertData("23.1", "gezond");
+    await fillInData("186", "75",{page});
+    await assertData("21.7", "gezond",{page});
   });
 
   test('te zwaar', async ({ page }) => {
-    await fillInData("186", "90");
-    await assertData("26", "te zwaar");
+    await fillInData("186", "90",{page});
+    await assertData("26", "te zwaar",{page});
   });
 
   test('veel te zwaar', async ({ page }) => {
-    await fillInData("176", "120");
-    await assertData("38.7", "veel te zwaar");
+    await fillInData("176", "120",{page});
+    await assertData("38.7", "veel te zwaar",{page});
   });
