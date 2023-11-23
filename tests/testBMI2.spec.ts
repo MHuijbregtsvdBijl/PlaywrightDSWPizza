@@ -1,13 +1,18 @@
 import { test, expect, Page, Browser } from '@playwright/test';
 
-//codevoorbeeld playwright
+//codevoorbeeld playwright:
+//noot: de paginacontext moet meegegeven worden!
 /*
-async function InvulFunctie(eersteWaarde:number, tweedeWaarde:number){
+async function InvulFunctie(eersteWaarde:number, tweedeWaarde:number,{page}){
   async ({page}) =>{
   await this.page.locator("//input[@id='veld1']").fill(eersteWaarde);
   await this.page.locator("//input[@id='veld2']").fill(tweedeWaarde);
   }
 }
+
+test.beforeEach(async ({ page }) => {
+  await page.goto('RandomWebsite.nl');
+});
 
 test('gebruik de functie', async ({ page }) => {
   await page.goto("url");
@@ -15,9 +20,7 @@ test('gebruik de functie', async ({ page }) => {
   await page.locator("//button[@id='knop']");
 });
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('RandomWebsite.nl');
-});
+
 */
 //vanaf hier code voor oplossing opdracht
 
