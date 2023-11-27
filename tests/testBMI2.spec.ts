@@ -42,7 +42,7 @@ async function assertData(bmi: string, text: string,{page}) {
 }
 
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/bmi.html");
+    await page.goto("https://automation.testpeople.nl/bmi");
   });
   
 

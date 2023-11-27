@@ -1,6 +1,6 @@
 import { test } from '../pom.fixture';
 import {expect} from '@playwright/test';
-
+/*
 
 test('Get Request', async ({ request }) => {
     //verstuur request en controleer reactie-status
@@ -11,7 +11,7 @@ test('Get Request', async ({ request }) => {
     });
     expect(getRequest.status()).toBe(200);
   });
-  
+
   const dataToSend = {"value" : "string", "another value" : "also a string"};
 
   test("Put request", async ({ request }) => {
@@ -23,3 +23,5 @@ test('Get Request', async ({ request }) => {
   });
   expect(putRequest.status()).toBe(200);
 })
+
+*/

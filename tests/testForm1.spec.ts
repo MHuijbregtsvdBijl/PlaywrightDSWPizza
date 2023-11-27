@@ -13,12 +13,13 @@ const user1 = {
 };
 
 test('Gebruik waardes', async ({ FormPage, page }) => {
-  await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/form.html");
+  await page.goto("https://automation.testpeople.nl/formulier");
   await FormPage.naamVeld.fill(user1.voornaam + " " + user1.achternaam);
   await FormPage.emailVeld.fill(user1.email);
   await FormPage.provincieDropdown.selectOption(user1.provincie);
   await FormPage.radioGeslachtMan.click();
   await FormPage.toestemmingCheckbox.check();
+  await FormPage.berichtVeld.fill("Lorem ipsum sit dolor et amet");
   await FormPage.indienKnop.click();  
   await expect(FormPage.resultFieldName).toContainText(user1.voornaam + " " + user1.achternaam);
 });

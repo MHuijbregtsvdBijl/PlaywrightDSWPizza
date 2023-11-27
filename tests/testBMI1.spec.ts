@@ -26,7 +26,7 @@ test('Test scenario 4', async ({ page }) => {
   */
 
   test('te licht', async ({ page }) => {
-    await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/bmi.html");
+    await page.goto("https://automation.testpeople.nl/bmi");
     await page.locator('//input[@id="BMILengte"]').fill("176");
     await page.locator('//input[@id="BMIGewicht"]').fill("20");
     await page.locator('//button[@id="berekenBMI"]').click();
@@ -34,7 +34,7 @@ test('Test scenario 4', async ({ page }) => {
   });
 
   test('gezond', async ({ page }) => {
-    await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/bmi.html");
+    await page.goto("https://automation.testpeople.nl/bmi");
     await page.locator('//input[@id="BMILengte"]').fill("186");
     await page.locator('//input[@id="BMIGewicht"]').fill("80");
     await page.locator('//button[@id="berekenBMI"]').click();
@@ -42,7 +42,7 @@ test('Test scenario 4', async ({ page }) => {
   });
 
   test('te zwaar', async ({ page }) => {
-    await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/bmi.html");
+    await page.goto("https://automation.testpeople.nl/bmi");
     await page.locator('//input[@id="BMILengte"]').fill("186");
     await page.locator('//input[@id="BMIGewicht"]').fill("90");
     await page.locator('//button[@id="berekenBMI"]').click();
@@ -50,7 +50,7 @@ test('Test scenario 4', async ({ page }) => {
   });
 
   test('veel te zwaar', async ({ page }) => {
-    await page.goto("https://peter425.gitlab.io/openpeopletestwebsite/bmi.html");
+    await page.goto("https://automation.testpeople.nl/bmi");
     await page.locator('//input[@id="BMILengte"]').fill("176");
     await page.locator('//input[@id="BMIGewicht"]').fill("120");
     await page.locator('//button[@id="berekenBMI"]').click();
